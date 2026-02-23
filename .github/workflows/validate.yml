@@ -1,0 +1,30 @@
+name: Validate Modules
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        module:
+          - vm/yandex
+          - vm/digitalocean
+          - vm/timeweb
+          - dns/cloudflare
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init (no backend)
+        run: terraform -chdir=${{ matrix.module }} init -backend=false
+
+      - name: Terraform Validate
+        run: terraform -chdir=${{ matrix.module }} validate
