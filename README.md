@@ -4,6 +4,8 @@ Unified Terraform VM/DNS modules for provider-agnostic deployments. Tired of fin
 
 ## Repository Contents
 
+Provider-specific setup is documented in the README of the corresponding module.
+
 ### VM modules
 
 - [`vm/yandex`](./vm/yandex) - [Yandex Cloud](https://yandex.cloud/).
