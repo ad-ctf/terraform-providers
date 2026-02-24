@@ -65,8 +65,8 @@ module "vm_yc" {
 - `cores` (`number`) - number of vCPUs.
 - `memory` (`number`) - RAM in GB.
 - `disk_gb` (`number`) - boot disk size in GB.
-- `platform_id` (`string`, optional, default: `"standard-v2"`). See list of platforms here: https://yandex.cloud/en/docs/compute/concepts/vm-platforms
-- `core_fraction` (`number`, optional).
+- `platform_id` (`string`, optional, default: `"standard-v2"`). See list of available platforms, cores, memory, and core fractions here: https://yandex.cloud/en/docs/compute/concepts/performance-levels
+- `core_fraction` (`number`, optional) - percents of CPU performance (`5`, `20`, `50`, `100`).
 - `nat_ip_address` (`string`, optional) - static public IP if needed.
 - `security_group_names` (`list(string)`, optional, default: `[]`) - security group names.
 
