@@ -102,3 +102,7 @@ Outputs:
 - Current release: `v1.0.0` (see `CHANGELOG.md`).
 - Consumers must pin module versions via `?ref=vX.Y.Z`.
 - Using `main` as a module source is not recommended because interfaces may change without backward compatibility guarantees.
+
+## Thanks to
+
+- [fanbrawla](https://github.com/fanbrawla), yandex module developer
