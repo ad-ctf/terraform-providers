@@ -11,6 +11,7 @@ Provider-specific setup is documented in the README of the corresponding module.
 - [`vm/yandex`](./vm/yandex) - [Yandex Cloud](https://yandex.cloud/).
 - [`vm/digitalocean`](./vm/digitalocean) - [DigitalOcean](https://www.digitalocean.com/).
 - [`vm/timeweb`](./vm/timeweb) - [Timeweb](https://timeweb.cloud/).
+- [`vm/vkcloud`](./vm/vkcloud) - [VK Cloud](https://cloud.vk.com/).
 
 ### DNS module
 
@@ -24,7 +25,7 @@ terraform {
 }
 
 module "vm" {
-  source = "git::https://github.com/ad-ctf/terraform-providers.git//vm/digitalocean?ref=v1.0.0"
+  source = "git::https://github.com/ad-ctf/terraform-providers.git//vm/digitalocean?ref=v1.1.0"
 
   provider_settings = {
     digitalocean_api_token = var.digitalocean_api_token
@@ -46,7 +47,7 @@ output "vm_ip" {
 }
 
 module "dns" {
-  source = "git::https://github.com/ad-ctf/terraform-providers.git//dns/cloudflare?ref=v1.0.0"
+  source = "git::https://github.com/ad-ctf/terraform-providers.git//dns/cloudflare?ref=v1.1.0"
 
   provider_settings = {
     cloudflare_api_token = var.cloudflare_api_token
@@ -99,7 +100,6 @@ Outputs:
 
 ## Supported Versions
 
-- Current release: `v1.0.0` (see `CHANGELOG.md`).
 - Consumers must pin module versions via `?ref=vX.Y.Z`.
 - Using `main` as a module source is not recommended because interfaces may change without backward compatibility guarantees.
 
